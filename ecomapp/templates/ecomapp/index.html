@@ -11,8 +11,8 @@
         {% for product in products %}
             <div class="rounded-lg shadow-lg p-4">
                 <img class="rounded-md mb-4 w-120 h-60 mx-auto" src="{{product.image.url}}" alt"" />
-                <a class="text-lg font-semibold" href="">{{product.name}}</a>
-                <p class="text-gray-600">${{product.description}}</p>
+                <a class="text-lg font-semibold" href="{{product.get_absolute_url}}">{{product.name}}</a>
+                <p class="text-gray-600">{{product.description}}</p>
                 <p class="text-green-500 font-bold mt-2 text-lg">${{product.price}}</p>
 
             </div>

@@ -22,6 +22,7 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('ecomapp.urls')),
+    path('', include('cart.urls')),
 ]
 
 if settings.DEBUG:

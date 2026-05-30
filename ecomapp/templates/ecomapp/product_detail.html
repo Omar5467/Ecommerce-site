@@ -36,10 +36,23 @@
                 {% else %}
                     <p class="text-sm text-green-700">Out of Stock</p>
                 {% endif %}
-                <button class="w-full bg-yellow-400 text-black font-semibold py-2 rounded-lg ">Add to Cart</button>
+                <button id="atc" class="w-full bg-yellow-400 text-black font-semibold py-2 rounded-lg ">
+                    Add to Cart</button>
                 <button class="w-full bg-green-700 text-white font-semibold py-2 rounded-lg ">Buy Now</button>
                 <p class="text-sm text-green-600">Sold by Ecom Store and Fulfilled by Ecom Store</p>
             </div>
         </div>
     </div>
+    <script>
+        $(document).on("click","#atc",function(e){
+            console.log("Button clicked!");
+            $.ajax({
+                type: "POST",
+                url: '{% url "cart_add" %}',
+                data: {
+                    csrfmiddlewaretoken: "{{csrf_token}}",
+                },
+            });
+        });
+    </script>
 {% endblock %}
