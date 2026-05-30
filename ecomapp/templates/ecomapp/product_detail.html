@@ -1,6 +1,6 @@
 {% extends 'ecomapp/base.html' %}
 
-{% block content %}
+{% block body %}
     
     <div class="px-32 my-6">
         <H1 class="text-3xl font-bold text-center p-10 ">Product Details</H1>
@@ -23,7 +23,7 @@
             <div class="col-span-1 space-y-4 border rounded-lg shadow-md p-6">
                 <p class="text-2xl font-semibold text-gray-900">$ {{ product.price}}</p>
 
-                <select name="" id="">
+                <select name="" id="selectedquantity">
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -36,7 +36,7 @@
                 {% else %}
                     <p class="text-sm text-green-700">Out of Stock</p>
                 {% endif %}
-                <button id="atc" class="w-full bg-yellow-400 text-black font-semibold py-2 rounded-lg ">
+                <button id="atc" value="{{ product.id }}" class="w-full bg-yellow-400 text-black font-semibold py-2 rounded-lg ">
                     Add to Cart</button>
                 <button class="w-full bg-green-700 text-white font-semibold py-2 rounded-lg ">Buy Now</button>
                 <p class="text-sm text-green-600">Sold by Ecom Store and Fulfilled by Ecom Store</p>
@@ -51,6 +51,8 @@
                 url: '{% url "cart_add" %}',
                 data: {
                     csrfmiddlewaretoken: "{{csrf_token}}",
+                    product_id: $(this).val(),
+                    product_quantity: $("#selectedquantity option:selected").text(),
                 },
             });
         });
