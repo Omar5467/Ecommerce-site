@@ -31,3 +31,30 @@ Follow these structured steps to set up and run the development server locally:
 ```bash
 git clone [https://github.com/Omar5467/Ecommerce-site.git](https://github.com/Omar5467/Ecommerce-site.git)
 cd Ecommerce-site
+
+
+# Create environment
+python -m venv venv
+
+# Activate environment (Linux/macOS)
+source venv/bin/activate
+
+# Activate environment (Windows)
+venv\Scripts\activate
+
+#Install Dependencies
+pip install -r requirements.txt
+
+#Database Migrations & Superuser
+python manage.py makemigrations
+python manage.py migrate
+
+# Create administrative account
+python manage.py createsuperuser
+
+#Run the Server
+python manage.py runserver
+
+Navigate to
+http://127.0.0.1:8000/
+in your browser.
