@@ -15,4 +15,9 @@ def cart_add(request):
         product = get_object_or_404(Product, id=product_id)
         # cart.add(product, product_quantity)
         cart.add(product=product, product_quantity=product_quantity)
-    return JsonResponse({'Message':'Add to cart button is clicked!'})
+        cart_qty = cart.__len__()
+    return JsonResponse({'CartQuantity': cart_qty})
+
+def cart_detailview(request):
+    cart = Cart(request)
+    return render(request, 'cart/cart_detailview.html', {'cart': cart})

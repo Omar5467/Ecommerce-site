@@ -54,6 +54,12 @@
                     product_id: $(this).val(),
                     product_quantity: $("#selectedquantity option:selected").text(),
                 },
+                success: function(json){
+                    console.log(json);
+                    //$("#cart-qty").text(json.CartQuantity);
+                    document.getElementById("cart-qty").textContent = json.CartQuantity;
+                },
+
             });
         });
     </script>
