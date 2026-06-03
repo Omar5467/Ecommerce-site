@@ -33,7 +33,10 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'ecomapp',
     'cart',
+<<<<<<< HEAD
     'users',
+=======
+>>>>>>> f198b6fbade7b5490f36e3e9ae4b26af2685b46e
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
