@@ -16,7 +16,6 @@ def cart_add(request):
         # cart.add(product, product_quantity)
         cart.add(product=product, product_quantity=product_quantity)
         cart_qty = cart.__len__()
-<<<<<<< HEAD
     return JsonResponse({'cart_qty': cart_qty})
 
 def cart_detailview(request):
@@ -46,10 +45,10 @@ def cart_update(request):
         cart_total_price = cart.get_total_price()
         return JsonResponse({'cart_qty': cart_qty, 'cart_total_price': cart_total_price})
         
-=======
+
     return JsonResponse({'CartQuantity': cart_qty})
 
 def cart_detailview(request):
     cart = Cart(request)
     return render(request, 'cart/cart_detailview.html', {'cart': cart})
->>>>>>> f198b6fbade7b5490f36e3e9ae4b26af2685b46e
+
