@@ -23,10 +23,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('ecomapp.urls')),
     path('cart/', include('cart.urls')),
-<<<<<<< HEAD
     path('users/', include('users.urls')),
-=======
->>>>>>> f198b6fbade7b5490f36e3e9ae4b26af2685b46e
+
 ]
 
 if settings.DEBUG:
